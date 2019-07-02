@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head> 
+	<title>Contact V5</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="../pages/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/vendor/noui/nouislider.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../pages/css/main.css">
+<!--===============================================================================================-->
+
+
+</head>
+<body>
+<div>
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			
+				<span class="contact100-form-title">
+					Elegibilidade Tools
+				</span>
+
+				<div class="wrap-input100 validate-input bg1" data-validate="Favor informar o CNPJ">
+					<span class="label-input100">CNPJ *</span>
+					<input class="input100" type="text" name="cnpj"  ng-model="cnpj" placeholder="Informe o CNPJ">
+				</div>
+				<div class="container-contact100-form-btn">
+					<button type="submit"  class="contact100-form-btn" ng-click="login(cnpj)" style="background-color: darkgray;"  >
+						<span>
+							Pesquisar
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</br>
+
+			<h3><b>Pesquisa em lote</b></h3>
+			<div ng-controller = "fileCtrl">
+				<div class="wrap-input100" style="height: 250px">
+					<b><font color="red">Importante</font></b>
+					</br> Sua planilha deve conter um título CNPJ e abaixo a listagem dos CNPJ que deseja pesquisar.  
+					</br> Faça o download da planilha modelo  <a download="Modelo-para-pesquisa-CNAEs.xlsx" href="/pages/Modelo-para-pesquisa-CNAEs.xlsx"> aqui</a>  
+					</br></br>
+					<b>Upload</b><input type = "file" file-model = "myFile"/></br>
+
+					<button type="submit"  class="contact100-form-btn" ng-click="uploadFile()">
+							<span>
+								Pesquisar
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+					</button>
+
+				
+				</div>
+				
+			</div>				
+		</div>
+	</div>
+</div>
+</body>
+</html>

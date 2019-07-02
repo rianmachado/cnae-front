@@ -1,0 +1,137 @@
+
+<html>
+<head>
+	<title>POC-RIAN</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/vendorTable/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/fontsTable/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/vendorTable/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/vendorTable/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/vendorTable/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../pages/cssTable/util.css">
+	<link rel="stylesheet" type="text/css" href="../pages/cssTable/main.css">
+<!--===============================================================================================-->
+
+
+
+
+
+
+
+
+</head>
+
+<div data-ng-init="init()">
+		
+	
+	
+	
+	<div>
+			<div class="limiter">
+					
+					<div class="wrap-table100">
+						
+						<a href="#"><img  src="../pages/images/back_2.png" onclick="goBack()" width="48px" width="48px"></button></a></br>
+						<div class="table100 ver1 m-b-110">
+							<div class="table100-head">
+								<table>
+									<thead>
+										<tr class="row100 head">
+											<th class="cell100 column1">CNPJ</th>
+											<th class="cell100 column1">NOME</th>
+											<th class="cell100 column2">CIDADE</th>
+											<th class="cell100 column2">Status</th>
+											<th class="cell100 column2">   </th>
+											
+										
+											
+										</tr>
+									
+									</thead>
+								
+								</table>
+							</div>
+						
+									
+							
+							<div class="table100-body js-pscroll">	
+								<div ng-repeat="cnpjX in cnpjList">
+								
+									<table>
+										<tbody>
+										
+											<tr class="row100 body">
+													
+													<td class="cell100 column1"> <b>{{cnpjX.cnpj}}</b></td>										
+													<td class="cell100 column1"> <b>{{cnpjX.companyName}}</b></td>
+													<td class="cell100 column2"> <b>{{cnpjX.cidade}}</b></td>
+													<td class="cell100 column2"> <b><img src="{{cnpjX.status}}" width="20px" height="20px" alt=""  ></b></td>
+													<td class="cell100 column2" colspan="2"> Ver mais? <input type=checkbox ng-model=collapse> </td>
+
+	
+												<div class="card card-body">	
+													<tr class="row100 body" ng-show=collapse>
+															<td class="cell100 column1" colspan="4"> 
+																	<div class="table100 ver1 m-b-110">
+																			<div class="table100-head">
+																				<table>
+																					<thead>
+																						<tr>
+																							<th class="cell100 column1">CNAE</th>
+																							<th class="cell100 column1">STATUS</th>	
+																						</tr>
+																					</thead>
+																				</table>
+																			</div>
+												
+																			<div class="table100-body js-pscroll">
+																				
+																					<div ng-repeat="c in cnpjX.cnaes">
+																						<table>
+																							<tbody>
+																							
+																								<tr class="row100 body">
+																									
+																									<td class="cell100 column1">{{c.numero}}</td>										
+																									<td class="cell100 column1"><img src="{{c.img}}" width="20px" height="20px" alt="" title="{{c.alt}}" ></td>
+																											
+																								</tr>
+																						
+																							
+																							</tbody>
+																						</table>
+																					</div>
+																			</div>
+																	</div>
+															</td>																							
+													</tr>
+											
+										   		</div>	
+										
+										</tbody>
+									</table>
+								</div>
+							
+						</div>
+
+						
+
+
+					</div>
+				
+			</div>
+		</div>	
+</div>
+
+</body>
+
+
+</html>
