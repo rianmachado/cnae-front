@@ -44,8 +44,6 @@
 				<div class="wrap-input100 validate-input bg1" data-validate="Favor informar o CNPJ">
 					<span class="label-input100">CNPJ *</span>
 					<input class="input100" type="text" name="cnpj"  ng-model="cnpj" placeholder="Informe o CNPJ">
-				</div>
-				<div class="container-contact100-form-btn">
 					<button type="submit"  class="contact100-form-btn" ng-click="login(cnpj)" style="background-color: darkgray;"  >
 						<span>
 							Pesquisar
@@ -53,16 +51,17 @@
 						</span>
 					</button>
 				</div>
+				
 			</br>
 
 			<h3><b>Pesquisa em lote</b></h3>
 			<div ng-controller = "fileCtrl">
-				<div class="wrap-input100" style="height: 250px">
+				<div class="wrap-input100 bg1" style="height: 250px">
 					<b><font color="red">Importante</font></b>
 					</br> Sua planilha deve conter um título CNPJ e abaixo a listagem dos CNPJ que deseja pesquisar.  
 					</br> Faça o download da planilha modelo  <a download="Modelo-para-pesquisa-CNAEs.xlsx" href="/pages/Modelo-para-pesquisa-CNAEs.xlsx"> aqui</a>  
 					</br></br>
-					<b>Upload</b><input type = "file" file-model = "myFile"/></br>
+					<b>Upload: </b><input type = "file" file-model = "myFile"/></br>
 
 					<button type="submit"  class="contact100-form-btn" ng-click="uploadFile()">
 							<span>
