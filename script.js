@@ -58,20 +58,17 @@ app.controller('UserCRUDCtrl', ['$scope','UserCRUDService', '$location', functio
     }
    
       UserCRUDService.consulta(inputConsulta).then(function success(response){  
-          
           $scope.cnpjList = response.data;
           $scope.carregando = false;
-          //$scope.cnpjConsultado = response.data.cnpj;
-          //$scope.nomeConsultado = response.data.companyName;
-          //$scope.cidadeConsultado = response.data.cidade;
-          //$scope.cnaes = response.data.cnaes;
-          //$scope.alt = response.data.alt;
           $scope.message='';
           $scope.errorMessage = '';
       },
       function error (response ){
             $scope.message='ERRRRO';
             $scope.errorMessage = 'Error ao consultar';
+            alert('Não fossível realizar a consultas. Verifique se digitou as informações corretas para pesquisa.');
+            $scope.carregando = false;
+            $location.path('/');
       });
   }
 
