@@ -21,9 +21,12 @@
 <!--===============================================================================================-->
 
 </head>
+<div ng-if="carregando == true"> 
+	<img src="../pages/images/load.gif" style="position: absolute; margin: auto; top: 0; left: 0; right: 0;bottom: 0;"/>
+</div>
 <div data-ng-init="init()">
 
-	<div>
+	<div ng-if="carregando == false">
 			<div class="limiter">
 					
 					<div class="wrap-table100">

@@ -24,10 +24,7 @@ app.config(function($routeProvider, $locationProvider){
 
 
 
-
 app.controller('HomeController', function($scope, $location, fileUpload) {
- 
-
   $scope.login = function(cnpj) {
     if(cnpj==null || cnpj==''){
       alert('Informe um CNPJ para pesquisa');
@@ -48,7 +45,7 @@ app.controller('HomeControllerBarNav', function($scope, $location) {
 });
 
 app.controller('UserCRUDCtrl', ['$scope','UserCRUDService', '$location', function ($scope,  UserCRUDService, $location ) {
-  
+  $scope.carregando = true; // Show loading image      
 	$scope.init = function () {
     var parametroCnpj = ($location.search().param);
     var inputConsulta;
@@ -60,15 +57,15 @@ app.controller('UserCRUDCtrl', ['$scope','UserCRUDService', '$location', functio
       //alert(2)
     }
    
-      UserCRUDService.consulta(inputConsulta).then(function success(response){        
+      UserCRUDService.consulta(inputConsulta).then(function success(response){  
+          
           $scope.cnpjList = response.data;
+          $scope.carregando = false;
           //$scope.cnpjConsultado = response.data.cnpj;
           //$scope.nomeConsultado = response.data.companyName;
           //$scope.cidadeConsultado = response.data.cidade;
-          
           //$scope.cnaes = response.data.cnaes;
           //$scope.alt = response.data.alt;
-         
           $scope.message='';
           $scope.errorMessage = '';
       },
